@@ -188,16 +188,15 @@ $('#form').submit(function(e) {
   }
 
   //REMOVE THIS - it's just to show error messages 
-  $form_login.find('input[type="submit"]').on('click', function(event){
-       $form_modal.removeClass('is-visible'); 
-      $main_nav.addClass('hidden');
-      $main_dow.removeClass('hidden');
-      $('.mua').removeClass('hidden');
-  });
-  $form_signup.find('input[type="submit"]').on('click', function(event){
-    $form_modal.removeClass('is-visible'); 
-
-  });
+  // $form_login.find('input[type="submit"]').on('click', function(event){
+  //      $form_modal.removeClass('is-visible'); 
+  //     $main_nav.addClass('hidden');
+  //     $main_dow.removeClass('hidden');
+  //     $('.mua').removeClass('hidden');
+  // });
+  // $form_signup.find('input[type="submit"]').on('click', function(event){
+  //   $form_modal.removeClass('is-visible'); 
+  // });
 
 
   //IE9 placeholder fallback

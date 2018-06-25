@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1512644_GK</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/In_out.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+    <link rel="stylesheet" href="assets/css/journal.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default custom-header">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">WINE SUPERMARKET</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav links">
+                    <li role="presentation"><a href="#">Home </a></li>
+                    <li role="presentation"><a href="#">RƯỢU NGOẠI</a></li>
+                    <li role="presentation"><a href="#"> CHIVAS</a></li>
+                    <li role="presentation"><a href="#" class="custom-navbar"> JOHNNIE WALKER<span class="badge">new</span></a></li>
+                    <li role="presentation"><a href="#">HENNESSY </a></li>
+                    <li role="presentation"><a href="#">VANG &amp; CHAMPANE </a></li>
+                    <li role="presentation"><a href="#">VODKA </a></li>
+                    <li role="presentation"><a href="#">RƯỢU MẠNH</a></li>
+                    <li role="presentation"><a href="giohang.html">GIỎ HÀNG</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right main-nav">
+                    <li role="presentation"><a href="#" class="signin">Sign in</a></li>
+                    <li role="presentation"><a href="#" class="signup"> Sign up</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right dowlogin hidden">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="assets/img/avatar.jpg" class="dropdown-image"></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="presentation"><a href="profile.html">Profile </a></li>
+                            <li role="presentation"><a href="index.html">Logout </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="user-modal">
+        <div class="user-modal-container">
+            <ul class="switcher">
+                <li><a href="#0">Sign in</a></li>
+                <li><a href="#0">New account</a></li>
+            </ul>
+            <div id="login">
+                <form class="form">
+                    <p class="fieldset">
+                        <label class="image-replace email" for="signin-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                        <span class="error-message">An account with this email address does not exist!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace password" for="signin-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
+                        <a href="#0" class="hide-password">Show</a>
+                        <span class="error-message">Wrong password! Try again.</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">Remember me</label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width" type="submit" value="Login">
+                    </p>
+                </form>
+                
+                <p class="form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                <!-- <a href="#0" class="close-form">Close</a> -->
+            </div>
+
+            <div id="signup">
+                <form class="form">
+                    <p class="fieldset">
+                        <label class="image-replace username" for="signup-username">Username</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                        <span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace email" for="signup-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                        <span class="error-message">Enter a valid email address!</span>
+                    </p>
+                    
+                    <p class="fieldset">
+                        <label class="image-replace password" for="signup-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+                        <a href="#0" class="hide-password">Show</a>
+                        <span class="error-message">Your password has to be at least 6 characters long!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">I agree to the <a class="accept-terms" href="#0">Terms</a></label>
+                    </p>
+                <div class="g-recaptcha" data-sitekey="6LceGVYUAAAAALxgZ62emjvac0yJJ8rmWIB--vVg"></div>
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Create account">
+                    </p>
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div>
+
+            <div id="reset-password">
+                <p class="form-message">Lost your password? Please enter your email address.<br> You will receive a link to create a new password.</p>
+
+                <form class="form">
+                    <p class="fieldset">
+                        <label class="image-replace email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="error-message">An account with this email does not exist!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div>
+            <a href="#0" class="close-form">Close</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs Column_SP">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1LoaiRuou">LOẠI RƯỢU</h1></div>
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><span>Rượu ngoại nhập</span></li>
+                        <li class="list-group-item"><span>Rượu Chivas</span></li>
+                        <li class="list-group-item"><span>Rượu Johnnie Walker</span></li>
+                        <li class="list-group-item"><span>Rượu Hennessy</span></li>
+                        <li class="list-group-item"><span>Rượu Vang &amp; Champane</span></li>
+                        <li class="list-group-item"><span>Rượu Vodka</span></li>
+                        <li class="list-group-item"><span>Rượu Remy Martin</span></li>
+                        <li class="list-group-item"><span>Rượu Blended Scotch Whisky</span></li>
+                        <li class="list-group-item"><span>Rượu Ballantine's</span></li>
+                        <li class="list-group-item"><span>Rượu Macallan</span></li>
+                        <li class="list-group-item"><span>Rượu Singleton</span></li>
+                        <li class="list-group-item"><span>Rượu Glenfiddich</span></li>
+                        <li class="list-group-item"><span>Rượu Glendronach</span></li>
+                        <li class="list-group-item"><span>Các dòng rượu khác</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="row product-info split-50-50">
+                                <div class="left">
+                    <div class="image">
+                                                <span class="label-latest"><b>Mới</b></span>
+                                                <a href="https://ruoungoaigiasi.vn/image/cache/data/hinh-tong-hop/san-pham/johnnie-walker/johnnie-walker-gold-label-gift-box-2018/johnnie-walker-gold-label-2018-3-ruoungoaigiasi.vn-750x750.jpg" title=""><img src="https://ruoungoaigiasi.vn/image/cache/data/hinh-tong-hop/san-pham/johnnie-walker/johnnie-walker-gold-label-gift-box-2018/johnnie-walker-gold-label-2018-3-ruoungoaigiasi.vn-500x500.jpg" title="" alt="" id="image" data-largeimg="https://ruoungoaigiasi.vn/image/cache/data/hinh-tong-hop/san-pham/johnnie-walker/johnnie-walker-gold-label-gift-box-2018/johnnie-walker-gold-label-2018-3-ruoungoaigiasi.vn-750x750.jpg" itemprop="image"></a>
+          </div>
+                    <div class="gallery-text"><span>Xem thư viện ảnh</span></div>
+          
+                                        <div class="image-gallery" style="display: none !important;">
+                        <a href="https://ruoungoaigiasi.vn/image/cache/data/hinh-tong-hop/san-pham/johnnie-walker/johnnie-walker-gold-label-gift-box-2018/johnnie-walker-gold-label-2018-3-ruoungoaigiasi.vn-750x750.jpg" title="" class="swipebox"><img src="https://ruoungoaigiasi.vn/image/cache/data/hinh-tong-hop/san-pham/johnnie-walker/johnnie-walker-gold-label-gift-box-2018/johnnie-walker-gold-label-2018-3-ruoungoaigiasi.vn-500x500.jpg" title="" alt=""></a>
+                                  </div>
+                    
+        </div>
+                                <div class="right">
+                    <h1 class="heading-title" itemprop="name">Johnnie walker Gold label gift box 2018</h1>
+                    <div id="product" class="product-options">
+                      <ul class="list-unstyled description">
+                        <li class="product-views-count">Xem: 1304</li>
+                                                <li class="p-brand">Nhà sản xuất: <a href="https://ruoungoaigiasi.vn/Johnnie-Walker">Johnnie Walker</a></li>
+                                    <li class="p-model">Mã sản phẩm: <span class="p-model" itemprop="model">1515247470436</span></li>
+                        <li class="p-stock">Tình trạng: <span class="journal-stock instock">Còn hàng</span></li>
+          </ul>
+                    <div class="product-sold-count-text"><span>0</span>&nbsp; sản phẩm đã được bán</div>
+                                        <ul class="list-unstyled price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+            <meta itemprop="itemCondition" content="http://schema.org/NewCondition">
+            <meta itemprop="priceCurrency" content="vnđ">
+                        <link itemprop="availability" href="http://schema.org/InStock">
+                                    <li class="product-price" itemprop="price">1.030.000đ</li>
+                                                          </ul>
+                                            <div class="form-group cart ">
+              <div>
+                              <span class="qty">
+              <label class="control-label text-qty" for="input-quantity">Số lượng</label>
+              <a href="javascript:;" class="journal-stepper">-</a><input type="text" name="quantity" value="1" size="2" data-min-value="1" id="input-quantity" class="form-control"><a href="javascript:;" class="journal-stepper">+</a>
+              <input type="hidden" name="product_id" value="988">
+              <script>
+                /* quantity buttons */
+                var $input = $('.cart input[name="quantity"]');
+                function up() {
+                  var val = parseInt($input.val(), 10) + 1 || parseInt($input.attr('data-min-value'), 10);
+                  $input.val(val);
+                }
+                function down() {
+                  var val = parseInt($input.val(), 10) - 1 || 0;
+                  var min = parseInt($input.attr('data-min-value'), 10) || 1;
+                  $input.val(Math.max(val, min));
+                }
+                $('<a href="javascript:;" class="journal-stepper">-</a>').insertBefore($input).click(down);
+                $('<a href="javascript:;" class="journal-stepper">+</a>').insertAfter($input).click(up);
+                $input.keydown(function (e) {
+                  if (e.which === 38) {
+                    up();
+                    return false;
+                  }
+                  if (e.which === 40) {
+                    down();
+                    return false;
+                  }
+                });
+              </script>
+              </span>
+                <button type="button" id="button-cart" data-loading-text="Đang Xử lý..." class="button"><span class="button-cart-text">Thêm vào giỏ</span></button>
+                              </div>
+            </div>
+                        <div class="wishlist-compare">
+              <span class="links">
+                  <a onclick="addToWishList('988');">Thêm Yêu thích</a>
+                  <a onclick="addToCompare('988');">Thêm so sánh</a>
+              </span>
+            </div>
+                    <div class="rating">
+            <p>
+                                          <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+                                          <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 đánh giá</a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Viết đánh giá</a></p>
+          </div>
+                                  <div class="social share-this hide-on-mobile">
+              <div class="social-loaded">
+                <script type="text/javascript">var switchTo5x=true;</script>
+                <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+                <script type="text/javascript">stLight.options({publisher: "", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+                                <span class="st_fblike_hcount" displaytext="Facebook Like" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div data-action="" data-send="false" data-layout="button_count" data-show-faces="false" class="fb-like fb_iframe_widget" data-href="https://ruoungoaigiasi.vn/johnnie-walker-gold-label-gift-box-2018.html" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=https%3A%2F%2Fruoungoaigiasi.vn%2Fjohnnie-walker-gold-label-gift-box-2018.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 61px; height: 20px;"><iframe name="f297df38951c694" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.0/plugins/like.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FqMnGlIs-JNW.js%3Fversion%3D42%23cb%3Df25f1ea8ad1c034%26domain%3Druoungoaigiasi.vn%26origin%3Dhttps%253A%252F%252Fruoungoaigiasi.vn%252Ff6981ebbf760e8%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fruoungoaigiasi.vn%2Fjohnnie-walker-gold-label-gift-box-2018.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false" style="border: none; visibility: visible; width: 61px; height: 20px;" class=""></iframe></span></div></span></span>
+                                <span class="st_googleplus_hcount" displaytext="Google +" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stButton_gradient"><span class="chicklets googleplus">Google +</span></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+                                <span class="st_print_hcount" displaytext="Print" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span><span class="stButton_gradient"><span class="chicklets print">Print</span></span><span class="stArrow"><span class="stButton_gradient stHBubble" style="display: inline-block;"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+                                <span class="st_fbsend_hcount" displaytext="Facebook Send" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div class="fb-send" data-href="https://ruoungoaigiasi.vn/johnnie-walker-gold-label-gift-box-2018.html"></div></span></span>
+                              </div>
+            </div>
+                                    <div class="journal-custom-tab">
+                            <div class="block-icon block-icon-left" style="background-color: transparent"><i style="margin-right: 5px; color: rgb(68, 67, 73); font-size: 14px" data-icon=""></i></div>
+                                          <p><span style="line-height: 20.8px;">Thu mua rượu cũ.</span><a href="http://ruoungoaigiasi.vn/thu-mua-ruou-ngoai.html" style="line-height: 20.8px;">Tìm hiểu</a></p>            </div>
+                       </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>NHÀ SẢN XUẤT</h1></div>
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><span>Robert Mondavi, Mỹ</span></li>
+                        <li class="list-group-item"><span>Hardys, Úc</span></li>
+                        <li class="list-group-item"><span>Château Gruaud-Larose, Pháp</span></li>
+                        <li class="list-group-item"><span>Concha Y Toro, Chile</span></li>
+                        <li class="list-group-item"><span>Yellow tail, Úc</span></li>
+                        <li class="list-group-item"><span>Hennessy, Pháp</span></li>
+                        <li class="list-group-item"><span>Almaviva, Chile</span></li>
+                        <li class="list-group-item"><span>Château Lagrange, Pháp</span></li>
+                        <li class="list-group-item"><span>Lucente, Ý</span></li>
+                        <li class="list-group-item"><span>Urbina, Tây Ban Nha</span></li>
+                        <li class="list-group-item"><span>Các nhà sản xuất khác</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 footer-navigation">
+                <h3><a href="#">TQT.<span>logo </span></a></h3>
+                <p class="company-name">Company Name © 2018 </p>
+            </div>
+            <div class="col-md-4 col-sm-6 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p> 182, Le Dai Hanh</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> 123456789</p>
+                </div>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About the team</h4>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/myjs.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search">
+        <i class="glyphicon glyphicon-search icon_search"></i>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div></div>
+    </div>
+</div>
+{{#each ttsp}}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <img src='/assets/img/{{linkAnhSP}}' width="100%" height="100%" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div>
+                    <h2 class="ten ruou">RƯỢU </h2>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span>Nhà sản xuất:{{NSX}} </span>
+                            </li>
+                            <li class="list-group-item">
+                                <span>Mã sản phẩm: {{maSP}} </span>
+                            </li>
+                            <li class="list-group-item">
+                                <span>Tình trạng: Còn hàng</span>
+                            </li>
+                        </ul>
+                        <div></div>
+                        <h2>{{giaSP}}</h2>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="button">- </button>
+                            <input type="text" value="1" readonly class="soluong" />
+                            <button class="btn btn-default" type="button">+ </button>
+                            <button class="btn btn-default themvaogio" type="button">THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <h3 class="mota">Mô tả</h3>
+                    <span>{{moTa}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="splienquan">
+            <h3 class="splienquan">Sản phẩm liên quan</h3>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img width="100%" height="100%" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img width="100%" height="100%" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img width="100%" height="100%" />
+            </div>
+        </div>
+    </div>
+</div>
