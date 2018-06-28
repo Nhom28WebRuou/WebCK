@@ -3,10 +3,10 @@ var Promise=require('promise');
 exports.load = sql => {
     return new Promise((resolve, reject) => {
         var cn = mysql.createConnection({
-            host: 'db4free.net',
+            host: 'localhost',
             port: 3306,
-            user: 'thanhtuyen',
-            password: 'thanhtuyen97',
+            user: 'root',
+            password: '12121993a',
             database: 'winestore'
         });
 

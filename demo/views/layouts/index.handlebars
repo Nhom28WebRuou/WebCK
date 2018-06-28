@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1512644_GK</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/In_out.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="/assets/css/In_out.css">
 </head>
 
 <body>
@@ -30,33 +30,33 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav links">
                     <li role="presentation">
-                        <a href="#">Home </a>
+                        <a href="/home">Home </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">RƯỢU NGOẠI</a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Vodka">RƯỢU VODKA</a>
                     </li>
                     <li role="presentation">
-                        <a href="#"> CHIVAS</a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Chivas"> CHIVAS</a>
                     </li>
                     <li role="presentation">
-                        <a href="#" class="custom-navbar"> JOHNNIE WALKER
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Johnnie Walker" class="custom-navbar"> JOHNNIE WALKER
                             <span class="badge">new</span>
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">HENNESSY </a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Hennessy">HENNESSY </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">VANG &amp; CHAMPANE </a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Vang & Champane">VANG &amp; CHAMPANE </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">VODKA </a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Remy Martin">REMY MARTIN </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">RƯỢU MẠNH</a>
+                        <a href="/timkiem/timkiemtheoloai?loaiSP=Rượu Glenfiddich">RƯỢU GLENFIDDICH</a>
                     </li>
                     <li role="presentation">
-                        <a href="giohang.html">GIỎ HÀNG</a>
+                        <a href="/giohang">GIỎ HÀNG</a>
                     </li>
                 </ul>
                 {{#if flag}}
@@ -64,14 +64,16 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                             <span class="caret"></span>
-                            <img src="assets/img/avatar.jpg" class="dropdown-image">
+                            <img src="/assets/img/avatar.jpg" class="dropdown-image">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li role="presentation">
-                                <a href="profile.html">Profile </a>
+                                <a href="/profile.html">Profile </a>
                             </li>
                             <li role="presentation">
-                                <a href="home">Logout </a>
+                                <form id="frmLogout" method="POST" action="/account/logout" class="hidden">
+                                    </form>
+                                <a href="javascript:;" id="lnkLogout">Logout</a>
                             </li>
                         </ul>
                     </li>
@@ -102,7 +104,7 @@
                 </li>
             </ul>
             <div id="login">
-                <form class="form" method="POST" action="/login">
+                <form class="form" method="POST" action="/account/login">
                     <p class="fieldset">
                         <label class="image-replace email" for="signin_email">E-mail</label>
                         <input class="full-width has-padding has-border" id="signin_email" name="signin_email" type="email" placeholder="E-mail">
@@ -130,10 +132,10 @@
             </div>
 
             <div id="signup">
-                <form class="form" method="POST" action="/signup">
+                <form class="form" method="POST" action="/account/signup">
                     <p class="fieldset">
                         <label class="image-replace username" for="signup_username">Username</label>
-                        <input class="full-width has-padding has-border" name = "signup_username" id="signup_username" type="text" placeholder="Username">
+                        <input class="full-width has-padding has-border" name="signup_username" id="signup_username" type="text" placeholder="Username">
                         <span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
                     </p>
 
@@ -198,48 +200,11 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <span>Rượu ngoại nhập</span>
+                         {{#each loaiRuou}} 
+                         <li class="list-group-item">
+                            <a href="/timkiem/timkiemtheoloai?loaiSP={{loaiSP}}">{{loaiSP}}</a>
                         </li>
-                        <li class="list-group-item">
-                            <span>Rượu Chivas</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Johnnie Walker</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Hennessy</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Vang &amp; Champane</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Vodka</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Remy Martin</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Blended Scotch Whisky</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Ballantine's</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Macallan</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Singleton</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Glenfiddich</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Rượu Glendronach</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Các dòng rượu khác</span>
-                        </li>
+                         {{/each}}
                     </ul>
                 </div>
             </div>
@@ -254,39 +219,11 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <span>Robert Mondavi, Mỹ</span>
+                          {{#each NSX}} 
+                         <li class="list-group-item">
+                            <a href="/timkiem/timkiemtheoNSX?NSX={{NSX}}">{{NSX}}</a>
                         </li>
-                        <li class="list-group-item">
-                            <span>Hardys, Úc</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Château Gruaud-Larose, Pháp</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Concha Y Toro, Chile</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Yellow tail, Úc</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Hennessy, Pháp</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Almaviva, Chile</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Château Lagrange, Pháp</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Lucente, Ý</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Urbina, Tây Ban Nha</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span>Các nhà sản xuất khác</span>
-                        </li>
+                         {{/each}}
                     </ul>
                 </div>
             </div>
@@ -332,10 +269,15 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/myjs.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/myjs.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript">
+		$('#lnkLogout').on('click', function() {
+			$('#frmLogout').submit();
+		});
+	</script>
 </body>
 
 </html>

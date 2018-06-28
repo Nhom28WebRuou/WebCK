@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="search" placeholder="Tìm kiếm Tên, Giá, Loại hoặc Nhà Sản Xuất" class="inputSearch">
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search">
+        <i class="glyphicon glyphicon-search icon_search"></i>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="h1LoaiRuou">Kết quả tìm kiếm</h1>
+                    </div>
+                </div>
+                <div class="row danhSachSanPham">
+                    <div class="col-md-12">
+                        <div class="row">
+                        </div>
+                        {{#each model.ttsp}}
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 sanpham">
+                            <a href="/timkiem/chitiet?masanpham={{maSP}}">
+                                <img src='/assets/img/{{linkAnhSP}}'>
+                            </a>
+                            <form>
+                                <div class="thongTinSP">
+                                    <span>{{maSP}} </span>
+                                    <div></div>
+                                    <span>{{tenSP}}</span>
+                                    <div></div>
+                                    <span>{{giaSP}} </span>
+                                </div>
+                            </form>
+                            <button class="btn btn-warning mua hidden" type="button">Mua </button>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a>1</a>
+                            </li>
+                            <li>
+                                <a>2</a>
+                            </li>
+                            <li>
+                                <a>3</a>
+                            </li>
+                            <li>
+                                <a>4</a>
+                            </li>
+                            <li>
+                                <a>5</a>
+                            </li>
+                            <li>
+                                <a>...</a>
+                            </li>
+                            <li>
+                                <a aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

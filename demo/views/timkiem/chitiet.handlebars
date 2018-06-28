@@ -1,0 +1,119 @@
+
+{{#each model.ttsp}}
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <img src='/assets/img/{{linkAnhSP}}' width="100%" height="100%" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div>
+                    <h2 class="ten ruou">RƯỢU </h2>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span>Nhà sản xuất:{{NSX}} </span>
+                            </li>
+                            <li class="list-group-item">
+                                <span>Mã sản phẩm: {{maSP}} </span>
+                            </li>
+                            <li class="list-group-item">
+                                <span>Tình trạng: Còn hàng</span>
+                            </li>
+                        </ul>
+                        <div></div>
+                        <h2>{{giaSP}}</h2>
+                        <form class= "from" action="/giohang/themvaogio" method="POST">
+                        <div class="form-group">
+                            <button class="btn btn-default" type="button" id="giamTimKiem">- </button>
+                            <input id="soluongMua" type="text" value="1" readonly class="soluong" />
+                            <button class="btn btn-default" type="button" id="tangTimKiem">+ </button>
+                            <button class="btn btn-default themvaogio" type="submit">THÊM VÀO GIỎ</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <h3 class="mota">Mô tả</h3>
+                    <span>{{moTa}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="h1LoaiRuou">Nhà sản xuất cùng loại</h1>
+            </div>
+        </div>
+        <div class="row danhSachSanPham">
+            <div class="col-md-12">
+                <div class="row">
+                    {{#each model.NSX}}
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 sanpham">
+                        <a href="/timkiem/chitiet?masanpham={{maSP}}">
+                            <img src='/assets/img/{{linkAnhSP}}'>
+                        </a>
+                        <form>
+                            <div class="thongTinSP">
+                                <span>{{maSP}} </span>
+                                <div></div>
+                                <span>{{tenSP}}</span>
+                                <div></div>
+                                <span>{{giaSP}} </span>
+                            </div>
+                            <button class="btn btn-warning mua hidden" type="button">Mua </button>
+                        </form>
+                    </div>
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="h1LoaiRuou">Sản phẩm cùng loại</h1>
+            </div>
+        </div>
+        <div class="row danhSachSanPham">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {{#each model.sanphamCungLoai}}
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <div></div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 sanpham">
+                        <a href="/timkiem/chitiet?masanpham={{maSP}}">
+                            <img src='/assets/img/{{linkAnhSP}}'>
+                        </a>
+                        <form>
+                            <div class="thongTinSP">
+                                <span>{{maSP}} </span>
+                                <div></div>
+                                <span>{{tenSP}}</span>
+                                <div></div>
+                                <span>{{giaSP}} </span>
+                            </div>
+                            <button class="btn btn-warning mua hidden" type="button">Mua </button>
+                        </form>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
