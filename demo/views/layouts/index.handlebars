@@ -68,7 +68,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li role="presentation">
-                                <a href="/profile.html">Profile </a>
+                                <a href="/account/profile">Profile </a>
                             </li>
                             <li role="presentation">
                                 <form id="frmLogout" method="POST" action="/account/logout" class="hidden">
@@ -193,6 +193,9 @@
 
 
     <div class="row">
+        {{#if model.giohang}}
+            {{{body}}}
+        {{else}}
         <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs Column_SP">
             <div class="row">
                 <div class="col-md-12">
@@ -228,6 +231,7 @@
                 </div>
             </div>
         </div>
+        {{/if}}
     </div>
     <footer>
         <div class="row">

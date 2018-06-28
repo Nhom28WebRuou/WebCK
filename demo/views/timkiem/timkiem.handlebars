@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-        <input type="search" placeholder="Tìm kiếm Tên, Giá, Loại hoặc Nhà Sản Xuất" class="inputSearch">
+        <input type="search" placeholder="Tìm kiếm Tên hoặc Mã SP" class="inputSearch" id="timkiemhome">
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search">
         <i class="glyphicon glyphicon-search icon_search"></i>
@@ -51,24 +51,15 @@
                                     <span aria-hidden="true">«</span>
                                 </a>
                             </li>
+                            {{#each model.page_numbers}} {{#if model.isCurPage}}
                             <li class="active">
-                                <a>1</a>
+                                <a href="javascript:;">{{value}}</a>
                             </li>
+                            {{else}}
                             <li>
-                                <a>2</a>
+                                <a href="?page={{value}}">{{value}}</a>
                             </li>
-                            <li>
-                                <a>3</a>
-                            </li>
-                            <li>
-                                <a>4</a>
-                            </li>
-                            <li>
-                                <a>5</a>
-                            </li>
-                            <li>
-                                <a>...</a>
-                            </li>
+                            {{/if}} {{/each}}
                             <li>
                                 <a aria-label="Next">
                                     <span aria-hidden="true">»</span>

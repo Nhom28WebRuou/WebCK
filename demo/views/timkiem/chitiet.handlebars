@@ -24,10 +24,11 @@
                         </ul>
                         <div></div>
                         <h2>{{giaSP}}</h2>
-                        <form class= "from" action="/giohang/themvaogio" method="POST">
+                        <form class= "from" action="/cart/add" method="POST">
                         <div class="form-group">
+                            <input type="text" value={{maSP}} readonly class="hidden" name="maSP"  />
                             <button class="btn btn-default" type="button" id="giamTimKiem">- </button>
-                            <input id="soluongMua" type="text" value="1" readonly class="soluong" />
+                            <input id="soluongMua" type="text" value="1" readonly class="soluong" name="soluongMua" />
                             <button class="btn btn-default" type="button" id="tangTimKiem">+ </button>
                             <button class="btn btn-default themvaogio" type="submit">THÊM VÀO GIỎ</button>
                         </div>

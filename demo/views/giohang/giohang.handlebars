@@ -1,0 +1,158 @@
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs Column_SP">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="h1LoaiRuou">Lịch sử mua hàng</h1>
+        </div>
+        <div class="col-md-12">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span>Rượu Ballantine's</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Rượu Macallan</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Rượu Singleton</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Rượu Glenfiddich</span>
+                </li>
+                <li class="list-group-item">
+                    <span>Rượu Glendronach</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="search" placeholder="Tìm kiếm Tên, Giá, Loại hoặc Nhà Sản Xuất" class="inputSearch">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search">
+            <i class="glyphicon glyphicon-search icon_search"></i>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <div></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h1 class="h1LoaiRuou">Giỏ hàng</h1>
+                        </div>
+                    </div>
+                    <div class="row danhSachSanPham">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 soLuongSP">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div></div>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 classSoLuong">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Mã hàng</th>
+                                                    <th>Thông Tin</th>
+                                                    <th>Giá tiền</th>
+                                                    <th>Thành tiền</th>
+                                                    <th>Số lượng</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                {{#each model.items}}
+                                                <tr>
+                                                    <td>
+                                                        <div class="sanpham giohang">
+                                                            <img src="{{ttsp.linkAnhSP}}" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <form>
+                                                            <div class="thongTinSP giohang">
+                                                                <span>{{ttsp.maSP}} </span>
+                                                                <div></div>
+                                                                <span>{{ttsp.tenSP}}</span>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td>
+                                                        <form>
+                                                            <div class="thongTinSP giohang">
+                                                                <span id="gt1">{{ttsp.giaSP}}</span>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td>
+                                                        <form>
+                                                            <div class="thongTinSP giohang">
+                                                                <span id="gt1">{{giatien}}</span>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td>
+                                                        <form class="form-inline" action="/action_page.php">
+                                                            <div class="form-group">
+                                                                <button class="btn btn-default cuahang" type="button" id="giam1">-</button>
+                                                                <label id="sl1">{{soluong}}</label>
+                                                                <button class="btn btn-default cuahang" type="button" id="tang1">+</button>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs ThanhToan">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="h1LoaiRuou">Thanh toán</h1>
+        </div>
+        <div class="col-md-12">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
+                            <span>Tạm tính</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
+                            <span class="tinhtien">{{model.tongtien}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
+                            <span>Thành tiền</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
+                            <span class="tinhtien">{{model.tongtien}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <form class= "form" method="POST" action="/giohang/dathang">
+            <input value="{{model.tongtien}}" type="text" class= "hidden" name="tongtien">
+            <button class="btn btn-success buttonDatHang" type="submit">Tiến hành đặt hàng</button>
+            </form>
+        </div>
+    </div>
+</div>

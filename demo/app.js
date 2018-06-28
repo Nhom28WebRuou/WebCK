@@ -44,6 +44,8 @@ app.use(session({
 var homeControler = require('./Controllers/homeController');
 var accountController = require('./Controllers/accountController');
 var timkiemController = require('./Controllers/timkiemController');
+var giohangController = require('./Controllers/giohangController');
+var cartController = require('./Controllers/cartController');
 var home = require('./Controllers/homeController');
 
 
@@ -51,10 +53,7 @@ app.use('/', homeControler);
 app.use('/home', homeControler);
 app.use('/account', accountController);
 app.use('/timkiem', timkiemController);
-app.get('/giohang', function (req, res) {
-  res.render('giohang');
-});
-
-
+app.use('/giohang', giohangController);
+app.use('/cart', cartController);
 app.listen(4000);
 module.exports = app;

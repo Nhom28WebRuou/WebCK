@@ -1,0 +1,89 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <td>Tên </td>
+                <td>
+                    <div class="ten" id="ten">
+                        {{model.profile.username}}
+                    </div>
+                    <div class="doi ten hidden">
+                        <form action="/account/doiten" method="POST" class="form">
+                            <input type="text" size="20" title="Tên" value="{{model.profile.username}}" id="inputten" name="username">
+                            <br>
+                            <button class="btn btn-primary mybtn" type="submit" id="btnten">Thay đổi</button>
+                            <button class="cancel1" type="button">Hủy</button>
+                    </div>
+                    </form>
+                </td>
+                <td>
+                    <a href="#" class="cs1 hidden">Chỉnh sửa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Mail </td>
+                <td>
+                    <div class="mail" id="mail">
+                        {{model.profile.email}}
+                    </div>
+                    <div class="doi mail hidden">
+                        <input type="text" size="20" title="Mail" value="{{model.profile.email}}" id="inputmail">
+                        <br>
+                        <button class="btn btn-primary mybtn" type="button" id="btnmail">Thay đổi</button>
+                        <button class="cancel2" type="button">Hủy</button>
+                    </div>
+
+                </td>
+                <td>
+                    <a href="#" class="cs2 hidden" >Chỉnh sửa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>SDT </td>
+                <td>
+                    <div class="sdt" id="sdt">
+                        {{model.profile.sdt}}
+                    </div>
+                    <div class="doi sdt hidden">
+                        <form action="/account/doisdt" method="POST" class="form">
+                            <input type="text" size="20" title="Số điện thoại" value="{{model.profile.sdt}}" id="inputsdt" name="sdt">
+                            <br>
+                            <button class="btn btn-primary mybtn" type="submit" id="btnsdt">Thay đổi</button>
+                            <button class="cancel3" type="button">Hủy</button>
+                        </form>
+                    </div>
+
+                </td>
+                <td>
+                    <a href="#" class="cs3">Chỉnh sửa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới Tính</td>
+                <td>
+                    <div class="gt" id="gt">
+                        {{model.profile.gioitinh}}
+                    </div>
+                    <div class="doi gt hidden">
+                        <form action="/account/doigoitinh" method="POST" class="form">
+                            <label>
+                                <input type="radio" id="q128" name="goitinh" value="Nam" checked="checked" /> Nam
+                            </label>
+                            <label>
+                                <input type="radio" id="q129" name="goitinh" value="Nữ" /> Nữ
+                            </label>
+                            <br>
+                            <button class="btn btn-primary mybtn" type="submit" id="btngt">Thay đổi</button>
+                            <button class="cancel4" type="button">Hủy</button>
+                        </form>
+                    </div>
+
+                </td>
+                <td>
+                    <a href="#" class="cs4">Chỉnh sửa</a>
+                </td>
+            </tr>
+        </tbody>
+        <caption class="thongtinprofile">Cài đặt tài khoản chung</caption>
+    </table>
+</div>

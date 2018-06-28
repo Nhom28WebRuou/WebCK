@@ -8,10 +8,17 @@ jQuery(document).ready(function ($) {
   });
   $('#giamTimKiem').on('click', function (event) {
     var gt = $('#soluongMua').val();
-    alert(gt);
     var so = Number(gt) - 1;
     if(so>0){
       $('#soluongMua').val(String(so));
+    }
+  });
+  $('#soluongMua').on('click', function (event) {
+    var gt = $('#soluongMua').val();
+    var data = localStorage.getItem('soluong');
+    if(data!=null)
+    {
+    localStorage.setItem('soluong',gt);
     }
   });
   $('#tang1').on('click', function (event) {
@@ -107,7 +114,7 @@ jQuery(document).ready(function ($) {
     $('.gt').toggleClass('hidden');
   });
   $('.Column_Search').on('click', function (event) {
-    window.location = "timkiem?tentimkiem=" + document.getElementById('timkiemhome').value;
+    window.location = "/timkiem?tentimkiem=" + document.getElementById('timkiemhome').value;
   });
 
   $('#form').submit(function (e) {
