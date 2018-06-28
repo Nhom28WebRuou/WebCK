@@ -72,7 +72,7 @@
                             </li>
                             <li role="presentation">
                                 <form id="frmLogout" method="POST" action="/account/logout" class="hidden">
-                                    </form>
+                                </form>
                                 <a href="javascript:;" id="lnkLogout">Logout</a>
                             </li>
                         </ul>
@@ -158,7 +158,7 @@
                             <a class="accept-terms" href="#0">Terms</a>
                         </label>
                     </p>
-                    <div class="g-recaptcha" data-sitekey="6LceGVYUAAAAALxgZ62emjvac0yJJ8rmWIB--vVg"></div>
+                    <div class="g-recaptcha" data-sitekey="6Lc8SWEUAAAAADuo-PKfcBZr-EjdbiFgxmPwl10e"></div>
                     <p class="fieldset">
                         <input class="full-width has-padding" type="submit" value="Create account">
                     </p>
@@ -193,9 +193,7 @@
 
 
     <div class="row">
-        {{#if model.giohang}}
-            {{{body}}}
-        {{else}}
+        {{#if model.giohang}} {{{body}}} {{else}}
         <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs Column_SP">
             <div class="row">
                 <div class="col-md-12">
@@ -203,11 +201,24 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="list-group">
-                         {{#each loaiRuou}} 
-                         <li class="list-group-item">
+                        {{#each loaiRuou}}
+                        <li class="list-group-item">
                             <a href="/timkiem/timkiemtheoloai?loaiSP={{loaiSP}}">{{loaiSP}}</a>
                         </li>
-                         {{/each}}
+                        {{/each}}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <input type="search" placeholder="Tìm kiếm Tên hoặc Mã SP" class="Column_Search" id="timkiemhomeRuou">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search" id="Column_SearchRuou" >
+                                    <i class="glyphicon glyphicon-search icon_search"></i>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -222,11 +233,24 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="list-group">
-                          {{#each NSX}} 
-                         <li class="list-group-item">
+                        {{#each NSX}}
+                        <li class="list-group-item">
                             <a href="/timkiem/timkiemtheoNSX?NSX={{NSX}}">{{NSX}}</a>
                         </li>
-                         {{/each}}
+                        {{/each}}
+                          <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <input type="search" placeholder="Tìm kiếm Tên hoặc Mã SP" class="Column_Search" id="timkiemhomeNSX">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search" id="Column_SearchNSX" >
+                                    <i class="glyphicon glyphicon-search icon_search"></i>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -277,11 +301,12 @@
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/myjs.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <script type="text/javascript">
-		$('#lnkLogout').on('click', function() {
-			$('#frmLogout').submit();
-		});
-	</script>
+        $('#lnkLogout').on('click', function () {
+            $('#frmLogout').submit();
+        });
+    </script>
 </body>
 
 </html>

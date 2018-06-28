@@ -5,33 +5,53 @@ var home = require('./homeController');
 var timRepos = require('../repos/timkiemRepos');
 var body = require('body-parser');
 router.get('/', function (req, res) {
-    var data= req.body;
-    var index=0;
-    if(typeof variable == 'undefined')
-        index=0;
-    else
-        index= data.index*12;
-    var sql = "select * from sanpham where tenSP like N'%" + req.query.tentimkiem + "%' OR maSP like '%" + req.query.tentimkiem + "%'  limit 12 offset "+index;
-    console.log(sql);
-    db.load(sql).then(rows => {
+    var index = 0;
+    var prev = 1;
+    var next = 0;
+    var vt = 1;
+    if (typeof req.query.page == 'undefined')
+        index = 0;
+    else {
+        vt = Number(req.query.page);
+        index = (vt - 1) * 12;
+        if (vt > 1)
+            prev = vt - 1;
+    }
+
+    timRepos.getTimKiem(req.query.tentimkiem, index).then(rows => {
+
 
         var numbers = [];
-        var nPages=Math.floor(rows.length/12);
+        var nPages = Math.floor(rows.length / 12);
         for (i = 0; i <= nPages; i++) {
             numbers.push({
-                value: i+1,
-                isCurPage: i === index
+                value: i + 1,
+                isCurPage: (i + 1) == vt,
+                timkiem: req.query.tentimkiem
             });
         }
 
+        if (vt < nPages + 1) {
+            next = vt + 1;
+        }
+        else
+            next = vt;
         var vm = {
             ttsp: rows,
-            page_numbers: numbers
+            timkiem: req.query.tentimkiem,
+            page_numbers: numbers,
+            isPage: nPages != 0,
+            isPrev: vt != 1,
+            isNext: vt != (nPages + 1),
+            prev: prev,
+            next: next
         };
-        console.log(vm);
         home.getLayout(req, res, 'timkiem/timkiem', vm);
     });
 });
+
+
+
 
 router.get('/timkiemtheoNSX', function (req, res) {
 
@@ -62,7 +82,7 @@ router.get('/chitiet', function (req, res) {
     var p3 = timRepos.getNhaSanXuatCungLoaiByMa(req.query.masanpham);
     Promise.all([p1, p2, p3]).then(values => {
         var vm = {
-            ttsp: values[0],
+            ttsp: values[0][0],
             NSX: values[1],
             sanphamCungLoai: values[2],
             flag: req.session.isLogged,

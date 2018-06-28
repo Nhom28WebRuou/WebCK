@@ -2,7 +2,7 @@
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
         <input type="search" placeholder="Tìm kiếm Tên hoặc Mã SP" class="inputSearch" id="timkiemhome">
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Column_Search" id="Column_Search">
         <i class="glyphicon glyphicon-search icon_search"></i>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -42,33 +42,38 @@
                     </div>
                 </div>
             </div>
+            {{#if model.isPage}}
             <div class="row">
                 <div class="col-md-12">
                     <nav>
                         <ul class="pagination">
+
+                            {{#if model.isPrev}}
                             <li>
-                                <a aria-label="Previous">
+                                <a aria-label="Previous" href="?page={{model.prev}}&tentimkiem={{model.timkiem}}">
                                     <span aria-hidden="true">«</span>
                                 </a>
                             </li>
-                            {{#each model.page_numbers}} {{#if model.isCurPage}}
+                            {{/if}} {{#each model.page_numbers}} {{#if isCurPage}}
                             <li class="active">
                                 <a href="javascript:;">{{value}}</a>
                             </li>
                             {{else}}
                             <li>
-                                <a href="?page={{value}}">{{value}}</a>
+                                <a href="?page={{value}}&tentimkiem={{timkiem}}">{{value}}</a>
                             </li>
-                            {{/if}} {{/each}}
+                            {{/if}} {{/each}} {{#if  model.isNext}}
                             <li>
-                                <a aria-label="Next">
+                                <a aria-label="Next" href="?page={{model.next}}&tentimkiem={{model.timkiem}}">
                                     <span aria-hidden="true">»</span>
                                 </a>
                             </li>
+                            {{/if}}
                         </ul>
                     </nav>
                 </div>
             </div>
+            {{/if}}
         </div>
     </div>
 </div>

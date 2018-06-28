@@ -46,6 +46,7 @@ var accountController = require('./Controllers/accountController');
 var timkiemController = require('./Controllers/timkiemController');
 var giohangController = require('./Controllers/giohangController');
 var cartController = require('./Controllers/cartController');
+var adminController = require('./Controllers/adminController');
 var home = require('./Controllers/homeController');
 
 
@@ -55,5 +56,7 @@ app.use('/account', accountController);
 app.use('/timkiem', timkiemController);
 app.use('/giohang', giohangController);
 app.use('/cart', cartController);
+app.use('/admin', adminController);
+
 app.listen(4000);
 module.exports = app;

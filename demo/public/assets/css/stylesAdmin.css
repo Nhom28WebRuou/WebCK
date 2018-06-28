@@ -1,0 +1,102 @@
+h3#headingDashboard.panel-title{
+  margin-top:1%;
+  margin-left:0px;
+  font-size:30px;
+  color:#ffffffff;
+  color:: #a90f05;
+  color:#a90f05;
+}
+
+div#QuanLySP.col-lg-2.col-md-2.col-sm-2.col-xs-2{
+}
+
+img{
+  border:0;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+div#textQLySP.col-md-12{
+  color:#2655cdff;
+  color:#;
+  color:#2655cd;
+  text-align:center;
+}
+
+div#textQLyLoaiSP.col-md-12{
+  color:#2655cd;
+  text-align:center;
+}
+
+div#textQLyNhaSX.col-md-12{
+  color:#2655cd;
+  text-align:center;
+}
+
+div#textQLyDH.col-md-12{
+  color:##2655cd;
+  color:#2655cd;
+  text-align:center;
+}
+
+div#textThongKe.col-md-12{
+  color:#2655cd;
+  text-align:center;
+}
+
+div#textThoat.col-md-12{
+  color:#2655cd;
+  text-align:center;
+}
+
+div#header1.row{
+  background:#d71b0fff;
+  background:#f8483d;
+}
+
+div#txtketnoi.col-lg-2.col-md-2.col-sm-2.col-xs-2{
+  font-size:20px;
+  color:#fff;
+  text-align:right;
+  margin-right:auto;
+  margin-top:0.5%;
+}
+
+div#txtdangki.col-lg-2.col-md-2.col-sm-2.col-xs-2{
+  color:#fff;
+  text-align:center;
+  font-size:20px;
+  margin-top:0.5%;
+}
+
+div#txtdangnhap.col-lg-2.col-md-2.col-sm-2.col-xs-2{
+  color:#fff;
+  text-align:center;
+  font-size:20px;
+  margin-top:0.5%;
+}
+
+div#txtWinesupermarket{
+  color:#fff;
+  font-size:30px;
+  font-family:monospace;
+}
+
+div#header2.row{
+  background:#d94242;
+}
+
+div#input{
+  margin-top:2%;
+}
+
+div#giohang.col-lg-2.col-md-2.col-sm-2.col-xs-2{
+  margin-top:0.5%;
+}
+
+div#dsSP.col-md-12{
+  font-size:20px;
+  color:#8f8a8a;
+}
+

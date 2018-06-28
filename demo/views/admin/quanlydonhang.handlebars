@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <img src="assets/img/QuanLyDonHang.png">
+                    </div>
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                        <h3 class="panel-title" id="headingDashboard">Quản lý đơn hàng</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12" id="dsSP">
+                            <span>&gt;&gt;Danh sách đơn hàng&gt;&gt;</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã đơn hàng</th>
+                                        <th>Người đặt</th>
+                                        <th>Ngày đặt</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Số lượng</th>
+                                        <th>Trạng thái</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each model.donhang}}
+                                    <tr>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{maDH}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{username}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{ngayDH}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{tongSL}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{tongGT}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{ttDH}}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

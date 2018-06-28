@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <img src="assets/img/QuanLyNhaSX.png">
+                    </div>
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                        <h3 class="panel-title" id="headingDashboard">Quản lý nhà sản xuất</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12" id="dsSP">
+                            <span>&gt;&gt;Danh sách nhà sản xuất&gt;&gt;</span>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nhà Sản Xuất</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each model.nsx}}
+                                    <tr>
+                                        <td>
+                                            <div class="thongTinSP giohang">
+                                                <span id="gt1">{{NSX}}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

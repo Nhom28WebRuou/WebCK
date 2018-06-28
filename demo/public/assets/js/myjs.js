@@ -22,41 +22,11 @@ jQuery(document).ready(function ($) {
     }
   });
   $('#tang1').on('click', function (event) {
-    var gt = $('#sl1').text();
-    var so = Number(gt) + 1;
-    $('#sl1').text(so);
-    tinhlai();
-  });
-  $('#tang2').on('click', function (event) {
-    var gt = $('#sl2').text();
-    var so = Number(gt) + 1;
-    $('#sl2').text(so);
-    tinhlai();
+   
   });
   $('#giam1').on('click', function (event) {
-    var gt = $('#sl1').text();
-    var so = Number(gt) - 1;
-    if (so > 0) {
-      $('#sl1').text(so);
-      tinhlai();
-    }
   });
-  $('#giam2').on('click', function (event) {
-    var gt = $('#sl2').text();
-    var so = Number(gt) - 1;
-    if (so > 0) {
-      $('#sl2').text(so);
-      tinhlai();
-    }
-  });
-  function tinhlai() {
-    var gt1 = $('#sl1').text();
-    var tien1 = $('#gt1').text();
-    var gt2 = $('#sl2').text();
-    var tien2 = $('#gt2').text();
-    var thanhtien = Number(gt1) * Number(tien1) + Number(gt2) * Number(tien2);
-    $('.tinhtien').text(thanhtien)
-  }
+
 
 
   var name_array = new Array();
@@ -113,9 +83,18 @@ jQuery(document).ready(function ($) {
   $('.cancel4').on('click', function (event) {
     $('.gt').toggleClass('hidden');
   });
-  $('.Column_Search').on('click', function (event) {
+  $('#Column_Search').on('click', function (event) {
     window.location = "/timkiem?tentimkiem=" + document.getElementById('timkiemhome').value;
   });
+
+  $('#Column_SearchNSX').on('click', function (event) {
+    window.location = "/timkiem/timkiemtheoNSX?NSX=" + document.getElementById('timkiemhomeNSX').value;
+  });
+
+  $('#Column_SearchRuou').on('click', function (event) {
+    window.location = "/timkiem/timkiemtheoloai?loaiSP=" + document.getElementById('timkiemhomeRuou').value;
+  });
+
 
   $('#form').submit(function (e) {
     if (grecaptcha.getResponse() == '') {

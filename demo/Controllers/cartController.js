@@ -13,7 +13,6 @@ router.post('/add', function (req, res) {
         soluong: Number(data.soluongMua),
     };
     cartRepos.add(req.session.cart, item);
-    console.log(req.session.cart);
     res.redirect(req.headers.referer);
 });
 
@@ -24,7 +23,6 @@ router.post('/dathang', function (req, res) {
         soluong: Number(data.soluongMua),
     };
     cartRepos.add(req.session.cart, item);
-    console.log(req.session.cart);
     res.redirect(req.headers.referer);
 });
 
