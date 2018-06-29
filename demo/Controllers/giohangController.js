@@ -46,21 +46,60 @@ router.get('/', function (req, res) {
     });
 });
 
+
+router.get('/chitietgiohang', function (req, res) {
+    if (typeof req.session.user == 'undefined' || req.session.user == null) {
+        res.redirect('/');
+        return;
+    }
+    var username= req.session.user.username;
+    var maDH = req.query.maDH;
+    var pLichSu = giohangRepos.getLichSuMuaHang(username);
+    var chitiet=giohangRepos.getChiTiet(maDH);
+    var tongtien=giohangRepos.getTongTien(maDH);
+    Promise.all([pLichSu, chitiet,tongtien]).then(values => {
+        var ct= values[1];
+        var vm = {
+            lichsu: values[0],
+            ctlichsu: values[1],
+            tongtien:values[2][0],
+            giohang: true,
+
+        };
+        home.getLayout(req, res, 'giohang/chitietgiohang', vm);
+    });
+});
+
+
+
 router.post('/dathang', function (req, res) {
     var date = new Date();
     var tongsl = 0;
     var data = req.body;
     var cart = req.session.cart;
+    var username = req.session.user.username;
     var gio = date.getUTCHours() + 7;
     if (gio >= 24)
         gio = gio - 24;
     var ngay = date.getUTCFullYear() + "-" + Number(date.getUTCMonth() + 1) + "-" + date.getUTCDate() + " " + gio + ":" + date.getUTCMinutes() + ":" + date.getUTCSeconds();
-    for (i = 0; i < req.session.cart.length; i++) {
+    for (i = 0; i < cart.length; i++) {
         tongsl += cart[i].soluong;
     }
-    giohangRepos.themHoaDon(req.session.user.username, ngay, tongsl, Number(data.tongtien)).then(value => {
-        req.session.cart = [];
-        res.redirect(req.headers.referer);
+    giohangRepos.themHoaDon(username, ngay, tongsl, Number(data.tongtien)).then(value => {
+        giohangRepos.getMaDH(username, ngay).then(maDHs => {
+
+
+            var arr_p = [];
+            for (var i = 0; i < cart.length; i++) {
+                var cartItem = cart[i];
+                var p = giohangRepos.thanhtoanchitiet(maDHs[0].maDH, cartItem.maSP, cartItem.soluong);
+                arr_p.push(p);
+            }
+            Promise.all(arr_p).then(result => {
+                req.session.cart = [];
+                res.redirect(req.headers.referer);
+            });
+        });
     });
 });
 

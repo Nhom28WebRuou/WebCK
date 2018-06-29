@@ -63,51 +63,40 @@
                                                     <th>Mã hàng</th>
                                                     <th>Thông Tin</th>
                                                     <th>Giá tiền</th>
-                                                    <th>Thành tiền</th>
                                                     <th>Số lượng</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
-                                                {{#each model.items}}
+                                                {{#each model.ctlichsu}}
                                                 <tr>
                                                     <td>
                                                         <div class="sanpham giohang">
                                                             <a href="/timkiem/chitiet?masanpham={{maSP}}">
-                                                            <img src="/assets/img/{{ttsp.linkAnhSP}}" />
+                                                                <img src="/assets/img/{{linkAnhSP}}" />
                                                             </a>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <form>
                                                             <div class="thongTinSP giohang">
-                                                                <span>{{ttsp.maSP}} </span>
+                                                                <span>{{maSP}} </span>
                                                                 <div></div>
-                                                                <span>{{ttsp.tenSP}}</span>
+                                                                <span>{{tenSP}}</span>
                                                             </div>
                                                         </form>
                                                     </td>
                                                     <td>
                                                         <form>
                                                             <div class="thongTinSP giohang">
-                                                                <span id="gt1">{{ttsp.giaSP}}</span>
+                                                                <span id="gt1">{{giaSP}}</span>
                                                             </div>
                                                         </form>
                                                     </td>
                                                     <td>
                                                         <form>
                                                             <div class="thongTinSP giohang">
-                                                                <span id="gt1">{{giatien}}</span>
-                                                            </div>
-                                                        </form>
-                                                    </td>
-                                                    <td>
-                                                        <form class="form-inline" action="/giohang/thaydoi" method="POST">
-                                                            <div class="form-group">
-                                                                <input value="{{ttsp.maSP}}" class="hidden" type="text" name="maSP" />
-                                                                <button class="btn btn-default cuahang" formaction='/giohang/giam' type="submit">-</button>
-                                                                <label id="sl1">{{soluong}}</label>
-                                                                <button class="btn btn-default cuahang" formaction='/giohang/tang' type="submit">+</button>
+                                                                <span id="sl">{{soluong}}</span>
                                                             </div>
                                                         </form>
                                                     </td>
@@ -138,10 +127,10 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
-                            <span>Tạm tính</span>
+                            <span>Số lượng</span>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
-                            <span class="tinhtien">{{model.tongtien}}</span>
+                            <span class="tinhtien">{{model.tongtien.tongSL}}</span>
                         </div>
                     </div>
                 </li>
@@ -151,15 +140,11 @@
                             <span>Thành tiền</span>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
-                            <span class="tinhtien">{{model.tongtien}}</span>
+                            <span class="tinhtien">{{model.tongtien.tongGT}}</span>
                         </div>
                     </div>
                 </li>
             </ul>
-            <form class="form" method="POST" action="/giohang/dathang">
-                <input value="{{model.tongtien}}" type="text" class="hidden" name="tongtien">
-                <button class="btn btn-success buttonDatHang" type="submit">Tiến hành đặt hàng</button>
-            </form>
         </div>
     </div>
 </div>
