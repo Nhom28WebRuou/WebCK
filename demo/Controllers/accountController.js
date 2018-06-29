@@ -41,32 +41,30 @@ router.post('/login', function (req, res) {
 
 router.post('/signup', function (req, res) {
   var data = req.body;
-  var sql = "insert into winestore.user values('" + data.signup_username + "',' " + data.signup_email + " ', '" + data.signup_password + "')";
+  var sql = "insert into winestore.user values('" + data.signup_username + "','" + data.signup_password + "', '" + data.signup_email + "' ,'Cap nhat', 'Cap nhat' )";
   db.load(sql).then(rows => {
-    res.render('/home');
+    res.redirect('/home');
   });
 });
 
 router.post('/logout', (req, res) => {
   req.session.isLogged = false;
   req.session.user = null;
-  // req.session.cart = [];
-  res.redirect(req.headers.referer);
+  req.session.cart = [];
+  res.redirect('/home');
 });
 
 
 router.post('/doisdt', function (req, res) {
   var data = req.body;
-  var sql = "update winestore.user set sdt = '" + data.sdt + "' where username = '"+req.session.user.username+"'";
-  console.log(sql);
+  var sql = "update winestore.user set sdt = '" + data.sdt + "' where username = '" + req.session.user.username + "'";
   db.save(sql).then(rows => {
     res.redirect(req.headers.referer);
   });
 });
 router.post('/doigoitinh', function (req, res) {
   var data = req.body;
-  var sql = "update winestore.user set gioitinh = '" + data.goitinh + "' where username = '"+req.session.user.username+"'";
-  console.log(sql);
+  var sql = "update winestore.user set gioitinh = '" + data.goitinh + "' where username = '" + req.session.user.username + "'";
   db.save(sql).then(rows => {
     res.redirect(req.headers.referer);
   });

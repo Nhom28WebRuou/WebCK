@@ -93,6 +93,7 @@ router.post('/dathang', function (req, res) {
             for (var i = 0; i < cart.length; i++) {
                 var cartItem = cart[i];
                 var p = giohangRepos.thanhtoanchitiet(maDHs[0].maDH, cartItem.maSP, cartItem.soluong);
+                var p1= giohangRepos.thanhtoanSP(cartItem.maSP, cartItem.soluong);
                 arr_p.push(p);
             }
             Promise.all(arr_p).then(result => {
@@ -111,7 +112,6 @@ router.post('/giam', function (req, res) {
         maSP: data.maSP,
         soluong: 1,
     };
-    console.log(item);
     cartRepos.sub(req.session.cart, item);
     res.redirect('/giohang');
 });
@@ -122,7 +122,6 @@ router.post('/tang', function (req, res) {
         maSP: data.maSP,
         soluong: 1,
     };
-    console.log(data);
     cartRepos.add(req.session.cart, item);
     res.redirect('/giohang');
 });

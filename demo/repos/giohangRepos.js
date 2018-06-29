@@ -8,9 +8,14 @@ exports.getSanPhamByMa = (maSP) => {
 exports.thanhtoanchitiet = (maDH, maSP, soluong) => {
 
     var sql = "insert into winestore.chitiethoadon values(" + maDH + ",'" + maSP + "'," + soluong + ");";
-    console.log(sql);
     db.themTrucTiep(sql);
 }
+exports.thanhtoanSP = (maSP, soluong) => {
+
+    var sql = "update winestore.sanpham set slMua = slMua + " + soluong + " where maSP= '" + maSP + "'";
+    db.themTrucTiep(sql);
+}
+
 exports.themHoaDon = (maUser, ngayDH, tongSL, tongGT) => {
 
     var sql = "insert into winestore.dondathang(username,ngayDH,tongSL,tongGT) values ('" + maUser + "','" + ngayDH + "'," + tongSL + "," + tongGT + ")";

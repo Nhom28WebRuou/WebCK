@@ -13,67 +13,142 @@
                 </div>
             </div>
             <div class="panel-body">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-12" id="dsSP">
-                            <span>&gt;&gt;Danh sách đơn hàng&gt;&gt;</span>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12" id="dsSP">
+                                <span>&gt;&gt;Danh sách đơn hàng&gt;&gt;</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Mã đơn hàng</th>
-                                        <th>Người đặt</th>
-                                        <th>Ngày đặt</th>
-                                        <th>Tổng tiền</th>
-                                        <th>Số lượng</th>
-                                        <th>Trạng thái</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each model.donhang}}
-                                    <tr>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{maDH}}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{username}}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{ngayDH}}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{tongSL}}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{tongGT}}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="thongTinSP giohang">
-                                                <span id="gt1">{{ttDH}}</span>
-                                            </div>
-                                        </td>
-                                    </tr>
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Người đặt</th>
+                                            <th>Ngày đặt</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Số lượng</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each model.donhang}}
+                                        <tr>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{maDH}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{username}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{ngayDH}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{tongSL}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{tongGT}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{ttDH}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <form action="/admin/dat" method="POST" class="form">
+                                                    <div class="thongTinSP giohang">
+                                                        <input value="{{maDH}}" type="text" name="maDH" class="hidden" />
+                                                        <input type="submit" value="+" />
+                                                    </div>
+                                                </form>
+                                            </td>
 
-                                    {{/each}}
-                                </tbody>
-                            </table>
+                                        </tr>
+
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12" id="dsSP">
+                                <span>&gt;&gt;Danh sách đơn hàng đã đặt&gt;&gt;</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Người đặt</th>
+                                            <th>Ngày đặt</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Số lượng</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each model.donhangDD}}
+                                        <tr>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{maDH}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{username}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{ngayDH}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{tongSL}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{tongGT}}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="thongTinSP giohang">
+                                                    <span id="gt1">{{ttDH}}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

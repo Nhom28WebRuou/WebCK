@@ -50,7 +50,7 @@
 
                             {{#if model.isPrev}}
                             <li>
-                                <a aria-label="Previous" href="?page={{model.prev}}&tentimkiem={{model.timkiem}}">
+                                <a aria-label="Previous" href="?page={{model.prev}}&{{model.timkiem}}">
                                     <span aria-hidden="true">«</span>
                                 </a>
                             </li>
@@ -60,11 +60,11 @@
                             </li>
                             {{else}}
                             <li>
-                                <a href="?page={{value}}&tentimkiem={{timkiem}}">{{value}}</a>
+                                <a href="?page={{value}}&{{timkiem}}">{{value}}</a>
                             </li>
                             {{/if}} {{/each}} {{#if  model.isNext}}
                             <li>
-                                <a aria-label="Next" href="?page={{model.next}}&tentimkiem={{model.timkiem}}">
+                                <a aria-label="Next" href="?page={{model.next}}&{{model.timkiem}}">
                                     <span aria-hidden="true">»</span>
                                 </a>
                             </li>

@@ -19,46 +19,62 @@ router.getLayout = function (req, res, next) {
     };
     res.render(next, vm);
 }
-router.getLayoutThamSo = function (req, res, next,thamso) {
+router.getLayoutThamSo = function (req, res, next, thamso) {
 
     var vm = {
         layout: 'adminLayout',
-        model:thamso
+        model: thamso
     };
     res.render(next, vm);
 }
 router.get('/quanlydonhang', function (req, res) {
 
-    adminRepos.layDonDatHang().then(rows=>{
+    var p1 = adminRepos.layDonDatHang();
+    var p2 = adminRepos.layDonDatHangDD();
+    Promise.all([p1, p2]).then(values => {
         var vm = {
-            donhang: rows
+            donhang: values[0],
+            donhangDD: values[1],
         };
-     router.getLayoutThamSo(req, res, 'admin/quanlydonhang',vm);
+        router.getLayoutThamSo(req, res, 'admin/quanlydonhang', vm);
 
     });
 });
 
 router.get('/quanlysanpham', function (req, res) {
 
-    adminRepos.layDonDatHang().then(rows=>{
+    adminRepos.layDonDatHang().then(rows => {
         var vm = {
             donhang: rows
         };
-     router.getLayoutThamSo(req, res, 'admin/quanlysanpham',vm);
+        router.getLayoutThamSo(req, res, 'admin/quanlysanpham', vm);
 
     });
 });
 router.get('/quanlynsx', function (req, res) {
 
-    console.log('vao');
-    adminRepos.layNhaSanXuat().then(rows=>{
+    adminRepos.layNhaSanXuat().then(rows => {
         var vm = {
             nsx: rows
         };
-    console.log(vm);
-     router.getLayoutThamSo(req, res, 'admin/quanlynsx',vm);
+        router.getLayoutThamSo(req, res, 'admin/quanlynsx', vm);
 
     });
+});
+
+router.post('/dat', function (req, res) {
+    var data = req.body;
+    adminRepos.datHang(data.maDH).then(rows => {
+        res.redirect(req.headers.referer);
+    });
+});
+
+router.post('/themNSX', function (req, res) {
+    var data = req.body;
+    if (data.tenNSX == null || data.tenNSX == "")
+        res.redirect(req.headers.referer);
+    res.redirect(req.headers.referer);
+
 });
 
 

@@ -35,7 +35,6 @@ router.get('/home', function (req, res) {
     };
     router.getLayout(req,res,'home/home',vm);
   });
-
 });
 
 module.exports = router;
